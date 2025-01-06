@@ -38,14 +38,14 @@ jobs:
     # - name: Run Tests
     #   run: |
     #     docker compose exec <test-service-name> <test-command>
-        
-    # Step 6: Shut down services
-    - name: Tear Down Docker Compose
-      if: always()
-      run: |
-        docker compose down
     
     - name: Test Reporter
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         path: "**/cucumber-report.ndjson"
+    
+    # Step 6: Shut down services
+    - name: Tear Down Docker Compose
+      if: always()
+      run: |
+        docker compose down
