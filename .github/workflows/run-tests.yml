@@ -44,3 +44,9 @@ jobs:
       if: always()
       run: |
         docker compose down
+    
+    - name: Test Reporter
+      uses: dorny/test-reporter@v1.9.1
+      with:
+        files: |
+          **/test-results.json
