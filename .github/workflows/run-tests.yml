@@ -43,7 +43,7 @@ jobs:
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "**/*.json"
+        path: "**/*.ndjson"
     
     - name: Shutdown Docker Compose
       if: always()
