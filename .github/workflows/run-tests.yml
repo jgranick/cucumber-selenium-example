@@ -48,4 +48,4 @@ jobs:
     - name: Test Reporter
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
-        path: "**/cucumber-report.json"
+        path: "reports/cucumber-report.json"
