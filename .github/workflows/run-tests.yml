@@ -14,7 +14,7 @@ permissions:
   checks: write
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,7 @@ jobs:
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "**/*.ndjson"
+        path: "**/*.json"
     
     - name: Shutdown Docker Compose
       if: always()
