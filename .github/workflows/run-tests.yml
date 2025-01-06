@@ -40,12 +40,12 @@ jobs:
     #     docker compose exec <test-service-name> <test-command>
     
     - name: List Files
-      run: ls
+      run: cd reports && ls
 
     - name: Test Reporter
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
-        path: "**/cucumber-report.ndjson"
+        path: "**/*.ndjson"
     
     # Step 6: Shut down services
     - name: Tear Down Docker Compose
