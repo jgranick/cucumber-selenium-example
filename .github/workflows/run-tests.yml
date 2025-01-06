@@ -31,16 +31,13 @@ jobs:
     # Step 4: Build and run services using Docker Compose
     - name: Build and Run Docker Compose Services
       run: |
-        docker compose --file docker-compose.yml up --build -d
+        docker compose up --build -d
         docker compose ps
 
-    # Step 5: Run tests
-    # - name: Run Tests
-    #   run: |
-    #     docker compose exec <test-service-name> <test-command>
-    
-    - name: List Files
-      run: cd reports && ls
+    Step 5: Run tests
+    - name: Run Tests
+      run: |
+        docker compose run tests
 
     - name: Test Reporter
       uses: deblockt/cucumber-report-annotations-action@v1.7
